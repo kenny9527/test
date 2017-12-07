@@ -11,9 +11,9 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Animal dog = new Animal("dog",10);
+            Animal dog = new Animal("dog",2300);
             dog.color = "black";
-            Program.Eat(dog ,"hot dog" , 5.5 );
+            Program.Eat(dog ,"hot dog"  );
 
 
             Console.ReadKey();
@@ -24,12 +24,13 @@ namespace ConsoleApp1
         /// <param name="anl"></param>
         /// <param name="food"></param>
         /// <param name="eatKG"></param>
-        static void Eat( Animal anl , string food , double eatKG ) {
-            Console.WriteLine("吃"+food+" "+eatKG+"公斤");
-            int index = 0;
-            while ( index<eatKG ) {
+        static void Eat( Animal anl , string food  ) {
+            double eatKG = anl.getWeight_KG();
+            Console.WriteLine("吃"+food+" 原始體重"+ eatKG + "公斤");
+
+            
+            for (int n = 0 ; n < eatKG ; n++) {
                 anl.Eat(food);
-                index += 1;
             }
         }
     }
