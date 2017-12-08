@@ -18,19 +18,15 @@ namespace ConsoleApp1
 
             Console.ReadKey();
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="anl"></param>
-        /// <param name="food"></param>
-        /// <param name="eatKG"></param>
-        static void Eat( Animal anl , string food  ) {
-            double eatKG = anl.getWeight_KG();
-            Console.WriteLine("吃"+food+" 原始體重"+ eatKG + "公斤");
+
+        static void Eat( Animal aml , string food  ) {
+            double eatKG = aml.weightKG;
+            string str = string.Format("吃 {0} 原始體重 {1} 公斤",food, eatKG);
+            Console.WriteLine(str);
 
             
             for (int n = 0 ; n < eatKG ; n++) {
-                anl.Eat(food);
+                aml.Eat(food);
             }
         }
     }
